@@ -3,7 +3,7 @@ import { Box, Typography, useTheme } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
 import React from "react";
 import Header from "../../components/Header/Header";
-import { mockDataTeam } from "../../data/mockData/mockData";
+import { mockDataTeam } from "../../assets/mockData/mockData";
 import { tokens } from "../../theme";
 
 const Team = () => {
@@ -24,13 +24,13 @@ const Team = () => {
     {
       field: "age",
       headerName: "Age",
-      flex: 1,
+      flex: 0.5,
       cellClassName: "age-column-cell",
     },
     {
       field: "email",
       headerName: "email",
-      flex: 1,
+      flex: 1.5,
       cellClassName: "email-column-cell",
     },
 
