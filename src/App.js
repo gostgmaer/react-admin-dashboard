@@ -1,6 +1,6 @@
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import React from "react";
-import Sidebar from "./Global/Sidebar";
+import SidebarComp from "./Global/Sidebar";
 import Topbar from "./Global/Topbar";
 import { ColorModeContext, useMode } from "./theme";
 import AppRoute from "./Utils/Routes/Route";
@@ -12,7 +12,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <div className="app">
-          <Sidebar></Sidebar>
+          <SidebarComp></SidebarComp>
           <main className="content">
             <Topbar></Topbar>
 
