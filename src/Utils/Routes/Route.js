@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
+import Bar from "../../pages/bar";
 import Calendar from "../../pages/calendar/calendar";
 import Contacts from "../../pages/Contacts";
 import Dashbaord from "../../pages/Dashboard/Index";
@@ -19,6 +20,7 @@ const AppRoute = () => {
       <Route path="/form" element={<Form></Form>}></Route>
       <Route path="/contacts" element={<Contacts></Contacts>}></Route>
       <Route path="/faq" element={<FAQ></FAQ>}></Route>
+      <Route path="/bar-chart" element={<Bar></Bar>}></Route>
     
     </Routes>
   );
