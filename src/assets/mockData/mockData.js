@@ -1282,3 +1282,54 @@ export const mockDataTeam = [
       value: 171135,
     },
   ];
+  export const AccordianData = [{
+    "id": 1,
+    "title": "Palacios Municipal Airport",
+    "description": "Anterior soft tissue impingement",
+    "date": "2004-08-22T00:29:10Z"
+  }, {
+    "id": 2,
+    "title": "Okayama Airport",
+    "description": "Unspecified trochanteric fracture of right femur, subsequent encounter for open fracture type IIIA, IIIB, or IIIC with routine healing",
+    "date": "2008-07-26T03:46:42Z"
+  }, {
+    "id": 3,
+    "title": "Hearst René Fontaine Municipal Airport",
+    "description": "Corrosion of first degree of back of left hand, subsequent encounter",
+    "date": "2016-12-31T14:20:04Z"
+  }, {
+    "id": 4,
+    "title": "Ministro Pistarini International Airport",
+    "description": "Other contact with squirrel, initial encounter",
+    "date": "2012-04-23T17:36:55Z"
+  }, {
+    "id": 5,
+    "title": "V.C. Bird International Airport",
+    "description": "Stress fracture, unspecified tibia and fibula, sequela",
+    "date": "2012-08-07T15:56:14Z"
+  }, {
+    "id": 6,
+    "title": "Lakefield Airport",
+    "description": "Unspecified occupant of heavy transport vehicle injured in collision with pedal cycle in nontraffic accident, initial encounter",
+    "date": "2004-02-11T11:53:07Z"
+  }, {
+    "id": 7,
+    "title": "Scranton Municipal Airport.",
+    "description": "Drowning and submersion due to falling or jumping from burning water-skis, subsequent encounter",
+    "date": "2013-07-25T10:42:47Z"
+  }, {
+    "id": 8,
+    "title": "Reykhólar Airport",
+    "description": "Displaced fracture of second metatarsal bone, left foot, subsequent encounter for fracture with routine healing",
+    "date": "2000-12-10T22:51:40Z"
+  }, {
+    "id": 9,
+    "title": "Ulsan Airport",
+    "description": "Nondisplaced fracture of proximal phalanx of right lesser toe(s), initial encounter for open fracture",
+    "date": "2019-04-22T17:22:48Z"
+  }, {
+    "id": 10,
+    "title": "Ralph Wien Memorial Airport",
+    "description": "Unstable burst fracture of unspecified thoracic vertebra",
+    "date": "2019-06-26T14:20:23Z"
+  }]
