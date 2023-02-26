@@ -1,6 +1,7 @@
 import { Box, useTheme } from "@mui/material";
-import GeographyChart from "../../components/GeographyChart";
-import Header from "../../components/Header";
+import React from "react";
+import Header from "../../components/Header/Header";
+
 import { tokens } from "../../theme";
 
 const Geography = () => {
@@ -15,7 +16,7 @@ const Geography = () => {
         border={`1px solid ${colors.grey[100]}`}
         borderRadius="4px"
       >
-        <GeographyChart />
+       
       </Box>
     </Box>
   );
