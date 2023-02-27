@@ -211,14 +211,14 @@ const SidebarComp = () => {
             />
             <Item
               title="Pie Chart"
-              to="/pie"
+              to="/pie-chart"
               icon={<PieChartOutline />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
               title="Line Chart"
-              to="/line"
+              to="/line-chart"
               icon={<TimelineOutlined />}
               selected={selected}
               setSelected={setSelected}

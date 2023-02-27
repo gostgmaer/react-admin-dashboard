@@ -7,6 +7,8 @@ import Dashbaord from "../../pages/Dashboard/Index";
 import FAQ from "../../pages/faq";
 import Form from "../../pages/form";
 import Invoices from "../../pages/Invoice";
+import Line from "../../pages/line";
+import Pie from "../../pages/pie";
 import Team from "../../pages/Team";
 
 
@@ -21,6 +23,8 @@ const AppRoute = () => {
       <Route path="/contacts" element={<Contacts></Contacts>}></Route>
       <Route path="/faq" element={<FAQ></FAQ>}></Route>
       <Route path="/bar-chart" element={<Bar></Bar>}></Route>
+      <Route path="/pie-chart" element={<Pie></Pie>}></Route>
+      <Route path="/line-chart" element={<Line></Line>}></Route>
     
     </Routes>
   );
