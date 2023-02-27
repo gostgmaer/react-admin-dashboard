@@ -6,6 +6,7 @@ import Contacts from "../../pages/Contacts";
 import Dashbaord from "../../pages/Dashboard/Index";
 import FAQ from "../../pages/faq";
 import Form from "../../pages/form";
+import Geography from "../../pages/geography";
 import Invoices from "../../pages/Invoice";
 import Line from "../../pages/line";
 import Pie from "../../pages/pie";
@@ -25,6 +26,7 @@ const AppRoute = () => {
       <Route path="/bar-chart" element={<Bar></Bar>}></Route>
       <Route path="/pie-chart" element={<Pie></Pie>}></Route>
       <Route path="/line-chart" element={<Line></Line>}></Route>
+      <Route path="/geography-chart" element={<Geography></Geography>}></Route>
     
     </Routes>
   );

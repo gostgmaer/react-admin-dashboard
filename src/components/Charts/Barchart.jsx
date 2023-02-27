@@ -1,6 +1,6 @@
 import { useTheme } from "@mui/material";
 import React from "react";
-import { tokens } from "../theme";
+import { tokens } from "../../theme";
 
 import { ResponsiveBar } from "@nivo/bar";
 
@@ -29,6 +29,11 @@ const Barchart = ({ data,isDashboard }) => {
                 fill:colors.grey[100]
             }
           }
+        },
+        tooltip:{
+            container:{
+                color:colors.primary[500]
+            }
         },
         legends:{
             text:{

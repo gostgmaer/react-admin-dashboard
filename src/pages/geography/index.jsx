@@ -1,5 +1,7 @@
 import { Box, useTheme } from "@mui/material";
 import React from "react";
+import { mockGeographyData } from "../../assets/mockData/mockData";
+import GeoGraphyChart from "../../components/Charts/GeoGraphyChart";
 import Header from "../../components/Header/Header";
 
 import { tokens } from "../../theme";
@@ -13,9 +15,10 @@ const Geography = () => {
 
       <Box
         height="75vh"
-        border={`1px solid ${colors.grey[100]}`}
+        border={`0.5px solid ${colors.grey[100]}`}
         borderRadius="4px"
       >
+        <GeoGraphyChart data={mockGeographyData} isDashboard={false} ></GeoGraphyChart>
        
       </Box>
     </Box>

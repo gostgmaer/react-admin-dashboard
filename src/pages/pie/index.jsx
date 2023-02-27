@@ -2,7 +2,7 @@ import { Box } from "@mui/material";
 import React from "react";
 import { mockPieData } from "../../assets/mockData/mockData";
 import Header from "../../components/Header/Header";
-import PiChart from "../../components/PiChart";
+import PiChart from "../../components/Charts/PiChart";
 
 
 const Pie = () => {

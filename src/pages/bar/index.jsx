@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 import React from "react";
 import { mockBarData } from "../../assets/mockData/mockData";
-import Barchart from "../../components/Barchart";
+import Barchart from "../../components/Charts/Barchart";
 import Header from "../../components/Header/Header";
 
 

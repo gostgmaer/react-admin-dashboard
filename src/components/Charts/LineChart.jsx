@@ -1,7 +1,7 @@
 import React from "react";
 import { ResponsiveLine } from "@nivo/line";
 import { useTheme } from "@mui/material";
-import { tokens } from "../theme";
+import { tokens } from "../../theme";
 
 const LineChart = ({ data, isDashboard }) => {
   const theme = useTheme();
@@ -32,6 +32,11 @@ const LineChart = ({ data, isDashboard }) => {
             },
           },
         },
+        tooltip:{
+            container:{
+                color:colors.primary[500]
+            }
+        },
         legends: {
           text: {
             fill: colors.grey[100],
@@ -40,6 +45,7 @@ const LineChart = ({ data, isDashboard }) => {
       }}
   
       data={data}
+      colors={isDashboard?{datum:'color'}:{scheme:'nivo'}}
       margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
       xScale={{ type: 'point' }}
       yScale={{
@@ -55,8 +61,9 @@ const LineChart = ({ data, isDashboard }) => {
           orient: 'bottom',
           tickSize: 5,
           tickPadding: 5,
+          tickValues:5,
           tickRotation: 0,
-          legend: 'transportation',
+          legend: isDashboard?undefined:'transportation',
           legendOffset: 36,
           legendPosition: 'middle'
       }}
@@ -65,7 +72,7 @@ const LineChart = ({ data, isDashboard }) => {
           tickSize: 5,
           tickPadding: 5,
           tickRotation: 0,
-          legend: 'count',
+          legend: isDashboard?undefined:'count',
           legendOffset: -40,
           legendPosition: 'middle'
       }}

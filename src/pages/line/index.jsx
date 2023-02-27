@@ -2,7 +2,7 @@ import { Box } from "@mui/material";
 import React from "react";
 import { mockLineData } from "../../assets/mockData/mockData";
 import Header from "../../components/Header/Header";
-import LineChart from "../../components/LineChart";
+import LineChart from "../../components/Charts/LineChart";
 
 
 const Line = () => {

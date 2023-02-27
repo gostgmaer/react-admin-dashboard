@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, useTheme } from "@mui/material";
 import { ResponsivePie } from "@nivo/pie";
-import { tokens } from "../theme";
+import { tokens } from "../../theme";
 
 const PiChart = ({ data, isDashboard }) => {
   const theme = useTheme();
@@ -31,6 +31,11 @@ const PiChart = ({ data, isDashboard }) => {
               fill: colors.grey[100],
             },
           },
+        },
+        tooltip:{
+            container:{
+                color:colors.primary[500]
+            }
         },
         legends: {
           text: {
