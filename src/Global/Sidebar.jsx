@@ -29,11 +29,25 @@ const SidebarComp = () => {
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
     return (
+      // <MenuItem
+      // href={to}
+      //   active={selected === title}
+      //   style={{
+      //     textDecoration: "none",
+      //     color: colors.grey[100],
+      //     backgroundColor: "transparent",
+      //   }}
+      //   onClick={() => setSelected(title)}
+      //   icon={icon}>
+      //   <Typography>{title}</Typography>
+
+      // </MenuItem>
 
       <NavLink
         style={{ color: `${colors.grey[400]}`, textDecoration: "none" }}
         to={to}>
         <MenuItem
+        href={to}
           active={selected === title}
           style={{
             textDecoration: "none",

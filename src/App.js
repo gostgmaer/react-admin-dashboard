@@ -15,7 +15,7 @@ function App() {
         <CssBaseline />
 
         <div className="app">
-          {isLogin === true ? (
+          {isLogin ? (
             <Fragment>
               <SidebarComp></SidebarComp>
               <main
