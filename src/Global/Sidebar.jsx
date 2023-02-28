@@ -55,7 +55,8 @@ const SidebarComp = () => {
     setIsCollapsed(!isCollapsed);
   };
   return (
-    <Box
+    <Box 
+    
       className="red"
       sx={{
         "& .ps-sidebar-container": {
@@ -79,7 +80,7 @@ const SidebarComp = () => {
         }
       }}>
       {" "}
-      <Sidebar >
+      <Sidebar style={{height:'100vh',position:'sticky',top:'0'}}>
         <Menu >
           {/* LOGO AND MENU ICON */}
           <MenuItem

@@ -1,5 +1,6 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import { createBrowserRouter, Route, Routes } from "react-router-dom";
+import Notfound from "../../pages/404/Notfound";
 import Bar from "../../pages/bar";
 import Calendar from "../../pages/calendar/calendar";
 import Contacts from "../../pages/Contacts";
@@ -9,9 +10,9 @@ import Form from "../../pages/form";
 import Geography from "../../pages/geography";
 import Invoices from "../../pages/Invoice";
 import Line from "../../pages/line";
+import Login from "../../pages/Login/Login";
 import Pie from "../../pages/pie";
 import Team from "../../pages/Team";
-
 
 const AppRoute = () => {
   return (
@@ -27,9 +28,20 @@ const AppRoute = () => {
       <Route path="/pie-chart" element={<Pie></Pie>}></Route>
       <Route path="/line-chart" element={<Line></Line>}></Route>
       <Route path="/geography-chart" element={<Geography></Geography>}></Route>
-    
+      <Route path="*" element={<Notfound></Notfound>}></Route>
+      {/* <Route path="/login" element={<Login></Login>}></Route> */}
     </Routes>
   );
 };
 
 export default AppRoute;
+
+export const AppLoginRoute = () => {
+  return (
+    <Routes>
+      <Route path="/login" element={<Login></Login>}></Route>
+      <Route path="/" element={<Login></Login>}></Route>
+      <Route path="*" element={<Notfound></Notfound>}></Route>
+    </Routes>
+  );
+};

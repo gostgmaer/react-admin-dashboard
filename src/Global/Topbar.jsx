@@ -10,15 +10,50 @@ import {
   SettingsApplications,
 } from "@mui/icons-material";
 
-import { Box, IconButton, InputBase, useTheme } from "@mui/material";
+import {
+  Box,
+  Button,
+  IconButton,
+  InputBase,
+  Menu,
+  MenuItem,
+  useTheme,
+} from "@mui/material";
 import React, { useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { UrlSetup } from "../components/Utilities/NavLinkComponents";
 import { ColorModeContext, tokens } from "../theme";
+import { useGlobalAuthContext } from "../Utils/Context/AuthContent";
 
 const Topbar = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const colorMode = useContext(ColorModeContext);
+  const { logOuthandler} = useGlobalAuthContext()
 
+  let navigate = useNavigate();
+
+
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+
+  
+  const handleClose = () => {
+    setAnchorEl(null);
+    
+  };
+
+  const logoutEvent = () => {
+    setAnchorEl(null);
+    logOuthandler()
+     navigate('/')
+  };
+  
   return (
     <Box
       className="Topbar"
@@ -43,14 +78,43 @@ const Topbar = () => {
           )}
         </IconButton>
         <IconButton>
-          <Notifications/>
+          <Notifications />
         </IconButton>
         <IconButton>
-          <Settings/>
+          <Settings />
         </IconButton>
-        <IconButton>
-          <Person/>
-        </IconButton>
+
+        <Box>
+          <IconButton
+            id="basic-button"
+            aria-controls={open ? "basic-menu" : undefined}
+            aria-haspopup="true"
+            aria-expanded={open ? "true" : undefined}
+            onClick={handleClick}>
+            <Person />
+          </IconButton>
+          {/* <Button
+            id="basic-button"
+            aria-controls={open ? "basic-menu" : undefined}
+            aria-haspopup="true"
+            aria-expanded={open ? "true" : undefined}
+            onClick={handleClick}>
+            Dashboard
+          </Button> */}
+          <Menu
+            id="basic-menu"
+            anchorEl={anchorEl}
+            open={open}
+            onClose={handleClose}
+            MenuListProps={{
+              "aria-labelledby": "basic-button",
+            }}>
+            <MenuItem onClick={handleClose}>
+              <UrlSetup to={"my-profile"} title={"Profile"}></UrlSetup>
+            </MenuItem>
+            <MenuItem onClick={logoutEvent}>Logout</MenuItem>
+          </Menu>
+        </Box>
       </Box>
     </Box>
   );
