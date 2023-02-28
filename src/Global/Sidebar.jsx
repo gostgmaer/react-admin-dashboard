@@ -29,11 +29,25 @@ const SidebarComp = () => {
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
     return (
+      // <MenuItem
+      // href={to}
+      //   active={selected === title}
+      //   style={{
+      //     textDecoration: "none",
+      //     color: colors.grey[100],
+      //     backgroundColor: "transparent",
+      //   }}
+      //   onClick={() => setSelected(title)}
+      //   icon={icon}>
+      //   <Typography>{title}</Typography>
+
+      // </MenuItem>
 
       <NavLink
         style={{ color: `${colors.grey[400]}`, textDecoration: "none" }}
         to={to}>
         <MenuItem
+        href={to}
           active={selected === title}
           style={{
             textDecoration: "none",
@@ -55,7 +69,8 @@ const SidebarComp = () => {
     setIsCollapsed(!isCollapsed);
   };
   return (
-    <Box
+    <Box 
+    
       className="red"
       sx={{
         "& .ps-sidebar-container": {
@@ -79,7 +94,7 @@ const SidebarComp = () => {
         }
       }}>
       {" "}
-      <Sidebar >
+      <Sidebar style={{height:'100vh',position:'sticky',top:'0'}}>
         <Menu >
           {/* LOGO AND MENU ICON */}
           <MenuItem
@@ -204,28 +219,28 @@ const SidebarComp = () => {
             </Typography>
             <Item
               title="Bar Chart"
-              to="/bar"
+              to="/bar-chart"
               icon={<BarChartOutlined />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
               title="Pie Chart"
-              to="/pie"
+              to="/pie-chart"
               icon={<PieChartOutline />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
               title="Line Chart"
-              to="/line"
+              to="/line-chart"
               icon={<TimelineOutlined />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
               title="Geography Chart"
-              to="/geography"
+              to="/geography-chart"
               icon={<MapOutlined />}
               selected={selected}
               setSelected={setSelected}
