@@ -4,10 +4,16 @@ import React from "react";
 import { Fragment } from "react";
 import './socialAuth.scss'
 const SocialAuth = () => {
+
+
+const googleAuth = (second) => { 
+  window.open('http://localhost:5000/auth/google')
+ }
+
   return (
     <Fragment>
       <Stack direction="row" spacing={2} sx={{justifyContent:'space-between'}} width="100%">
-        <IconButton
+        <IconButton onClick={googleAuth}
          className="iconbtn">
           <Google width={22} height={22} />
         </IconButton>
