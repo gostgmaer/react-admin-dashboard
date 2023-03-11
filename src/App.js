@@ -10,13 +10,12 @@ function App() {
   const [theme, colorMode] = useMode();
   const { logOuthandler, isLogin, LoginEvent } = useGlobalAuthContext();
   return (
-    <ColorModeContext.Provider value={colorMode}>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-
-        <div className="app">
-          {isLogin ? (
-            <Fragment>
+    <Fragment>
+      {isLogin ? (
+        <ColorModeContext.Provider value={colorMode}>
+          <ThemeProvider theme={theme}>
+            <CssBaseline />
+            <div className="app">
               <SidebarComp></SidebarComp>
               <main
                 style={{ position: "sticky", height: "initial" }}
@@ -26,18 +25,19 @@ function App() {
 
                   <AppRoute></AppRoute>
                 </div>
-              </main>
-            </Fragment>
-          ) : (
-            <main
-              style={{ position: "sticky", height: "initial" }}
-              className="content">
-              <AppLoginRoute></AppLoginRoute>
-            </main>
-          )}
-        </div>
-      </ThemeProvider>
-    </ColorModeContext.Provider>
+              </main>{" "}
+            </div>{" "}
+          </ThemeProvider>
+        </ColorModeContext.Provider>
+      ) : (
+        <div className="app">
+        <main
+          style={{ position: "sticky", height: "100%" }}
+          className="content">
+          <AppLoginRoute></AppLoginRoute>
+        </main></div>
+      )}
+    </Fragment>
   );
 }
 

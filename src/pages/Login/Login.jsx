@@ -98,6 +98,8 @@ const Login = () => {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
+          bgcolor:colors.grey[100],
+          color:colors.grey[900],borderRadius:'10px'
         }}>
         <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
           <LockOutlined />
@@ -133,6 +135,7 @@ const Login = () => {
                     margin="normal"
                     autoFocus
                     required
+                    autoComplete='off'
                     onBlur={handleBlur}
                     onChange={handleChange}
                     value={values.email}
@@ -140,7 +143,7 @@ const Login = () => {
                     error={!!touched.email && !!errors.email}
                     // @ts-ignore
                     helperText={touched.email && errors.email}
-                    sx={{ gridColumn: "span 6" }}
+                    sx={{ gridColumn: "span 6",bgcolor:'#fff' }}
                   />
                   <TextField
                     fullWidth
