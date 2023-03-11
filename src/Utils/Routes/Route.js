@@ -10,8 +10,10 @@ import Form from "../../pages/form";
 import Geography from "../../pages/geography";
 import Invoices from "../../pages/Invoice";
 import Line from "../../pages/line";
-import Login from "../../pages/Login/Login";
+import LoginPage from "../../pages/Login/LoginPage";
+import JoySignInSideTemplate from "../../pages/Login/LoginWithJoy";
 import Pie from "../../pages/pie";
+import Signup from "../../pages/Signup";
 import Team from "../../pages/Team";
 
 const AppRoute = () => {
@@ -39,9 +41,12 @@ export default AppRoute;
 export const AppLoginRoute = () => {
   return (
     <Routes>
-      <Route path="/login" element={<Login></Login>}></Route>
-      <Route path="/" element={<Login></Login>}></Route>
+    {/* <Route path="/login" element={<Login></Login>}></Route> */}
+    {/* <Route path="/login" element={<Signin></Signin>}></Route> */}
+      <Route path="/" element={<JoySignInSideTemplate></JoySignInSideTemplate>}></Route>
+      <Route path="/login" element={<JoySignInSideTemplate/>}></Route>
       <Route path="*" element={<Notfound></Notfound>}></Route>
+      <Route path="/signup" element={<Signup  setAuth={{}}></Signup>}></Route>
     </Routes>
   );
 };
