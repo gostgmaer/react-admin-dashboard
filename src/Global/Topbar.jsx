@@ -17,6 +17,7 @@ import {
   InputBase,
   Menu,
   MenuItem,
+  Typography,
   useTheme,
 } from "@mui/material";
 import React, { useContext } from "react";
@@ -29,10 +30,9 @@ const Topbar = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const colorMode = useContext(ColorModeContext);
-  const { logOuthandler} = useGlobalAuthContext()
+  const { logOuthandler } = useGlobalAuthContext();
 
   let navigate = useNavigate();
-
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -41,19 +41,16 @@ const Topbar = () => {
     setAnchorEl(event.currentTarget);
   };
 
-
-  
   const handleClose = () => {
     setAnchorEl(null);
-    
   };
 
   const logoutEvent = () => {
     setAnchorEl(null);
-    logOuthandler()
-     navigate('/')
+    logOuthandler();
+    navigate("/");
   };
-  
+
   return (
     <Box
       className="Topbar"
@@ -68,7 +65,7 @@ const Topbar = () => {
         </IconButton>
       </Box>
       {/* ICONS */}
-      <Box display={"flex"}>
+      <Box display={"flex"}sx={{alignItems: "center !important", gap: "5px" }}>
         <IconButton onClick={colorMode.toggleColorMode}>
           {" "}
           {theme.palette.mode === "dark" ? (
@@ -84,14 +81,19 @@ const Topbar = () => {
           <Settings />
         </IconButton>
 
-        <Box>
+        <Box sx={{ display: "flex", alignItems: "center !important", gap: "1px" }}>
+          <Typography>Kishor sarkar</Typography>
           <IconButton
             id="basic-button"
             aria-controls={open ? "basic-menu" : undefined}
             aria-haspopup="true"
             aria-expanded={open ? "true" : undefined}
             onClick={handleClick}>
-            <Person />
+            <img
+              src="https://source.unsplash.com/random"
+              style={{ width: "20px", height: "20px", borderRadius: "50%" }}
+              alt=""
+            />
           </IconButton>
           {/* <Button
             id="basic-button"

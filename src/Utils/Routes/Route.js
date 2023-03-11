@@ -12,6 +12,7 @@ import Invoices from "../../pages/Invoice";
 import Line from "../../pages/line";
 import LoginPage from "../../pages/Login/LoginPage";
 import JoySignInSideTemplate from "../../pages/Login/LoginWithJoy";
+import MuiLogin from "../../pages/Login/MuiLogin";
 import Pie from "../../pages/pie";
 import Signup from "../../pages/Signup";
 import Team from "../../pages/Team";
@@ -43,8 +44,10 @@ export const AppLoginRoute = () => {
     <Routes>
     {/* <Route path="/login" element={<Login></Login>}></Route> */}
     {/* <Route path="/login" element={<Signin></Signin>}></Route> */}
-      <Route path="/" element={<JoySignInSideTemplate></JoySignInSideTemplate>}></Route>
-      <Route path="/login" element={<JoySignInSideTemplate/>}></Route>
+      {/* <Route path="/" element={<JoySignInSideTemplate></JoySignInSideTemplate>}></Route>
+      <Route path="/login" element={<JoySignInSideTemplate/>}></Route> */}
+      <Route path="/" element={<MuiLogin></MuiLogin>}></Route>
+      <Route path="/login" element={<MuiLogin/>}></Route>
       <Route path="*" element={<Notfound></Notfound>}></Route>
       <Route path="/signup" element={<Signup  setAuth={{}}></Signup>}></Route>
     </Routes>
