@@ -30,7 +30,7 @@ const Topbar = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const colorMode = useContext(ColorModeContext);
-  const { user,setUser,logOuthandler } = useGlobalAuthContext();
+  const { user,setUser,logOuthandler,setIsLogin,isLogin } = useGlobalAuthContext();
 
 
   let navigate = useNavigate();
@@ -49,8 +49,8 @@ const Topbar = () => {
   const logoutEvent = () => {
     setAnchorEl(null);
     setUser(null);
-    logOuthandler()
-    
+    setIsLogin(false);
+    localStorage.removeItem("user");
   };
 
   return (
