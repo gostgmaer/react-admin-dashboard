@@ -5,6 +5,35 @@ const AuthProvider = ({ children }) => {
   const [loader, setLoader] = useState(false);
   const [appLoader, setAppLoader] = useState(false);
   const [isLogin, setIsLogin] = useState(false);
+  const [user, setUser] = useState(null);
+
+  
+  const getUser = () => {
+    fetch("http://localhost:5000/auth/login/success", {
+      method: "GET",
+      credentials: "include",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Credentials": 'true',
+      },
+    })
+      .then((response) => {
+        if (response.status === 200) return response.json();
+        throw new Error("authentication has been failed!");
+      })
+      .then((resObject) => {
+        setUser(resObject.user._json);
+        console.log(resObject);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  useEffect(() => {
+    getUser();
+  }, []);
 
   const logOuthandler = () => {
     setIsLogin(!isLogin);
@@ -39,8 +68,8 @@ const AuthProvider = ({ children }) => {
         loader,
         updateLoader,
         logOuthandler,
-        isLogin,
-        LoginEvent,
+        isLogin,user,setIsLogin,
+        LoginEvent,setUser,
       }}>
       {children}
     </AuthContext.Provider>

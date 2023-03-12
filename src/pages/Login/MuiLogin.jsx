@@ -130,6 +130,17 @@ const MuiLogin = () => {
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
+          <Typography
+            sx={{
+              mt: 5,
+              display: "flex",
+              justifyContent: "flex-start",
+              alignItems: "center",
+              width: "100%",
+            }}
+            variant="h6">
+          use any valid email and password
+          </Typography>
           <Formik
             onSubmit={handleFormSubmit}
             initialValues={initialValues}
