@@ -17,6 +17,7 @@ import React, { useState } from "react";
 import { Menu, MenuItem, Sidebar, useProSidebar } from "react-pro-sidebar";
 import { Link, NavLink } from "react-router-dom";
 import { tokens } from "../theme";
+import { useGlobalAuthContext } from "../Utils/Context/AuthContent";
 const SidebarComp = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
@@ -24,6 +25,8 @@ const SidebarComp = () => {
   const [selected, setSelected] = useState("Dashboard");
   const { collapseSidebar, toggleSidebar, collapsed, toggled, broken, rtl } =
     useProSidebar();
+    const { user,setUser } = useGlobalAuthContext();
+
 
   const Item = ({ title, to, icon, selected, setSelected }) => {
     const theme = useTheme();
@@ -127,7 +130,7 @@ const SidebarComp = () => {
                   alt="profile-user"
                   width="60px"
                   height="60px"
-                  src={`../assets/images/user.png`}
+                  src={user?.picture?user?.picture:'https://source.unsplash.com/random'}
                   style={{ cursor: "pointer", borderRadius: "50%" }}
                 />
               </Box>
@@ -137,7 +140,7 @@ const SidebarComp = () => {
                   color={colors.grey[100]}
                   fontWeight="bold"
                   sx={{ m: "10px 0 0 0" }}>
-                  Kishor Sarkar
+                {user?.name?user?.name:'Kishor Sarkar'}
                 </Typography>
                 <Typography variant="h5" color={colors.greenAccent[500]}>
                   VP Fancy Admin

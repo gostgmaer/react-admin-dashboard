@@ -1,5 +1,5 @@
 import { CssBaseline, ThemeProvider } from "@mui/material";
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import SidebarComp from "./Global/Sidebar";
 import Topbar from "./Global/Topbar";
 import { ColorModeContext, useMode } from "./theme";
@@ -8,10 +8,13 @@ import AppRoute, { AppLoginRoute } from "./Utils/Routes/Route";
 
 function App() {
   const [theme, colorMode] = useMode();
-  const { logOuthandler, isLogin, LoginEvent } = useGlobalAuthContext();
+  const { user,isLogin } = useGlobalAuthContext();
+
+
+
   return (
     <Fragment>
-      {isLogin ? (
+      {(user || isLogin) ? (
         <ColorModeContext.Provider value={colorMode}>
           <ThemeProvider theme={theme}>
             <CssBaseline />

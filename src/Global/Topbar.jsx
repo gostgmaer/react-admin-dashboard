@@ -30,7 +30,8 @@ const Topbar = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const colorMode = useContext(ColorModeContext);
-  const { logOuthandler } = useGlobalAuthContext();
+  const { user,setUser,logOuthandler } = useGlobalAuthContext();
+
 
   let navigate = useNavigate();
 
@@ -47,8 +48,9 @@ const Topbar = () => {
 
   const logoutEvent = () => {
     setAnchorEl(null);
-    logOuthandler();
-    navigate("/");
+    setUser(null);
+    logOuthandler()
+    
   };
 
   return (
@@ -82,7 +84,7 @@ const Topbar = () => {
         </IconButton>
 
         <Box sx={{ display: "flex", alignItems: "center !important", gap: "1px" }}>
-          <Typography>Kishor sarkar</Typography>
+          <Typography sx={{textTransform:'capitalize'}} >{ user?.name? user?.name.toLowerCase():'Kishor Sarkar'}</Typography>
           <IconButton
             id="basic-button"
             aria-controls={open ? "basic-menu" : undefined}
@@ -90,7 +92,7 @@ const Topbar = () => {
             aria-expanded={open ? "true" : undefined}
             onClick={handleClick}>
             <img
-              src="https://source.unsplash.com/random"
+              src={user?.picture?user?.picture:'https://source.unsplash.com/random'}
               style={{ width: "20px", height: "20px", borderRadius: "50%" }}
               alt=""
             />
